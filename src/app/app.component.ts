@@ -5,9 +5,11 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  template: `
+    <h1>Hello world!</h1>
+  `,
 })
 export class AppComponent {
-  title = 'angular-18-tutorial';
+  title = 'homes';
 }
