@@ -12,7 +12,7 @@ import { HomeComponent } from "./home/home.component";
       <a [routerLink]="['/']">
       <header class="brand-name">
         <!-- decorative image -->
-        <img src="/assets/logo.svg" alt="logo" aria-hidden="true">
+        <img src="./assets/logo.svg" alt="logo" aria-hidden="true">
       </header>
       </a>
       <section class="content">
