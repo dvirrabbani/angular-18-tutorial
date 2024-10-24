@@ -67,3 +67,11 @@ can request an instace of this service
 the property of the injecatable decorator metadata 
 tells angular where in the application this service can be injected
 'root' - means we can the service can be used throught the application  
+
+
+## Routing 
+
+- routerLink directive - In order to use "routerLink" directive 
+we must import { RouterModule } from '@angular/router'; 
+
+- ActivateRoute - is a reference to the current route in our application, we can access for vital information like params and etc' 
