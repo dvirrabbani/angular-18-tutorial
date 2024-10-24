@@ -45,6 +45,7 @@ ng serve -o // --open The --open (or just -o) option automatically opens your br
 ```
 ng g c component --standalone --inline-template 
 ng g c interface  // genrate a tpye  
+ng g service --skip-tests
 ```
 
 ## Input decorator
@@ -55,3 +56,14 @@ The "!" sybmol after the property name,
 tells Typescript complier that the value of this property won't be null or undefined
 like @input data:Data;
 
+## Service 
+
+Typescript class in angular
+@injectable decorator means we can use the service class
+In the dependecy injection system, meaning other parts of the application
+can request an instace of this service 
+
+# providedIn:'root'
+the property of the injecatable decorator metadata 
+tells angular where in the application this service can be injected
+'root' - means we can the service can be used throught the application  
