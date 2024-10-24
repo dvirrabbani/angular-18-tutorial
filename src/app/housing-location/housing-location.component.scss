@@ -17,8 +17,15 @@
   padding: 10px 20px 20px 20px;
 }
 .listing-location::before {
-  content: url("/assets/location-pin.svg") / "";
+  content: "";
+  background-image: url('/assets/location-pin.svg'), url('/angular-18-tutorial/assets/location-pin.svg');
+  background-size: contain; 
+  background-position: center; 
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
+
 section.listing a {
   padding-left: 20px;
   text-decoration: none;
