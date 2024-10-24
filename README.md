@@ -100,3 +100,18 @@ json-server --watch db.json
 
 ## Terms
 The term "listing" refers to a property available for rent or sale and is used to denote elements related to that property.
+
+## Deploy to github pages
+```
+ng add angular-cli-ghpages
+ng deploy --base-href=/angular-18-tutorial/
+```
+- Go to https://<username>.github.io/<repositoryname> to see your Angular application live.
+- live https://dvirrabbani.github.io/angular-18-tutorial
+
+# Additional Tips:
+If your repository is named as <username>.github.io, you don’t need to specify a repository name in the base href, just use / as the base URL:
+
+```
+ng build --prod --base-href "/"
+```
