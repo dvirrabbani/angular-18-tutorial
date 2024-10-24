@@ -30,3 +30,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ```
 ng serve -o // --open The --open (or just -o) option automatically opens your browser to http://localhost:4200/ to view the generated application.
 ```
+
+## Angular Component Metadata 
+- selector: to describe how Angular refers to the component in templates.
+- standalone: to describe whether the component requires a NgModule.
+- imports: to describe the component's dependencies(For import Components as dependencies).
+- template: to describe the component's HTML markup and layout.
+- styleUrls: to list the URLs of the CSS files that the component uses in an array.
+
+## CLI Genrate Commands
+```
+ng g c component --standalone --inline-template 
+```

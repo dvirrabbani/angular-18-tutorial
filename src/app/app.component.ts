@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from "./home/home.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HomeComponent],
   styleUrl: './app.component.scss',
   template: `
-    <h1>Hello world!</h1>
+    <main>
+      <header class="brand-name">
+        <!-- decorative image -->
+        <img src="/assets/logo.svg" alt="logo" aria-hidden="true">
+      </header>
+      <section class="content">
+        <app-home></app-home>
+      </section>
+    </main>
   `,
 })
 export class AppComponent {
