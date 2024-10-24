@@ -2,30 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
 ## Commands
 
 ```
@@ -62,6 +38,21 @@ Typescript class in angular
 @injectable decorator means we can use the service class
 In the dependecy injection system, meaning other parts of the application
 can request an instace of this service 
+- fetch request - define the return value and provide default return value
+```
+  async getAllHousingLocations(): Promise<HousingLocation[]> {
+    const data = await fetch(this.url);
+    return (await data.json()) ?? [];
+  }
+
+  // component.ts
+   constructor() {
+    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
+      this.housingLocationList = housingLocationList;
+      this.filteredLocationList = housingLocationList;
+    });
+  }
+```
 
 # providedIn:'root'
 the property of the injecatable decorator metadata 
@@ -75,3 +66,37 @@ tells angular where in the application this service can be injected
 we must import { RouterModule } from '@angular/router'; 
 
 - ActivateRoute - is a reference to the current route in our application, we can access for vital information like params and etc' 
+
+## Form 
+- ReactiveFormsModule 
+- FormGroup - to bind a form to the form group instance
+     ```
+     <form[formGroup]="applyForm">
+        <input formControlName="name" placeholder="Name">
+        ... code
+     </form>
+     ```
+- FormControl - always pass default value 
+- submiiting - provide a default value for all controls
+- ?? - if the value on left side is null or undefined get the value on the right side 
+
+```
+ <form [formGroup]="applyForm" (submit)="submitApplication()">
+ submitApplication() {
+    this.housingService.submitApplication(
+      this.applyForm.value.firstName ?? '',
+      this.applyForm.value.lastName ?? '',
+      this.applyForm.value.email ?? '',
+    );
+  }
+```
+
+## Json Server 
+```
+npm install -g json-server
+npx json-server db.json
+json-server --watch db.json
+```
+
+## Terms
+The term "listing" refers to a property available for rent or sale and is used to denote elements related to that property.
